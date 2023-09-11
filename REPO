@@ -14,6 +14,7 @@ d:openssl
 d:nftables
 d:linux-pam
 d:dbus
+d:python3-gobject
 d:mesa
 d:util-linux
 d:pkgutils
@@ -87,6 +88,9 @@ f:45c45f6032513391804cef9334413c05:dbus/Pkgfile
 f:a4f5a9771edbeac296c5058773205fb5:dbus/.footprint
 f:ee8f5be74f9df440dc2ed787e739066e:dbus/.md5sum
 f:23bc5ff22fe4f9a208d65fbbfd489ad9:dbus/30-dbus.launch
+f:e011c1168f239ef3a4f33776556eb6d4:python3-gobject/Pkgfile
+f:6748a810b1f7a111ea1fd862b4c6b7c4:python3-gobject/.footprint
+f:74069fedc726e807985492831d2ebe05:python3-gobject/.md5sum
 f:f540a6ca1cba40933bdcf9594627c938:mesa/Pkgfile
 f:d620ed560584f9a8b46b0ddd3ef0c482:mesa/.footprint
 f:0b6b6107d8beec9b542a74d01358f61c:mesa/.md5sum
