@@ -6,7 +6,7 @@
 
 name=rust
 version=1.72.0
-_date=2023-07-31
+_date=2023-07-13
 _rustc=1.71.0
 _cargo=$_rustc
 release=1
