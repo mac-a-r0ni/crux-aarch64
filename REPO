@@ -87,7 +87,9 @@ f:45c45f6032513391804cef9334413c05:dbus/Pkgfile
 f:a4f5a9771edbeac296c5058773205fb5:dbus/.footprint
 f:ee8f5be74f9df440dc2ed787e739066e:dbus/.md5sum
 f:23bc5ff22fe4f9a208d65fbbfd489ad9:dbus/30-dbus.launch
-f:0555fc0a74d4635ecbc7e41cac35c0b8:mesa/Pkgfile
+f:f540a6ca1cba40933bdcf9594627c938:mesa/Pkgfile
+f:d620ed560584f9a8b46b0ddd3ef0c482:mesa/.footprint
+f:0b6b6107d8beec9b542a74d01358f61c:mesa/.md5sum
 f:b1f299270a68ddc0e123e0c065f64093:util-linux/Pkgfile
 f:b1202fe0c4ac985b8ecb0cc5a07a6c9c:util-linux/.footprint
 f:d8a767e42c4b5f334d1b307c7280ddb8:util-linux/.md5sum
