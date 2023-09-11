@@ -6,7 +6,7 @@
 
 name=rust
 version=1.72.0
-_date=2023-07-13
+_date=2023-07-31
 _rustc=1.71.0
 _cargo=$_rustc
 release=1
@@ -16,8 +16,7 @@ source=(https://static.rust-lang.org/dist/${name}c-$version-src.tar.xz
 	https://static.rust-lang.org/dist/$_date/rustc-$_rustc-aarch64-unknown-linux-gnu.tar.xz
 	https://static.rust-lang.org/dist/$_date/cargo-$_cargo-aarch64-unknown-linux-gnu.tar.xz
 	0001-bootstrap-Change-libexec-dir.patch
-	0001-cargo-Change-libexec-dir.patch
-	0002-compiler-Change-LLVM-targets.patch)
+	0001-cargo-Change-libexec-dir.patch)
 
 unpack_source() {
 	for file in ${source[@]}; do
@@ -67,8 +66,6 @@ build() {
 	patch -d src/tools/cargo -Np1 -i $SRC/0001-cargo-Change-libexec-dir.patch
 
 	# Use our *-pc-linux-gnu targets, making LTO with clang simpler
-	patch -p1 -i $SRC/0002-compiler-Change-LLVM-targets.patch
-	#patch -p1 -i $SRC/114440.patch
 
 cat <<- EOF > $SRC/config.toml
 	changelog-seen = 2
@@ -102,7 +99,7 @@ cat <<- EOF > $SRC/config.toml
 	@LLD@
 
 	[build]
-	target = ["aarch64-unknown-linux-gnu", "i686-unknown-linux-gnu"]
+	target = ["aarch64-unknown-linux-gnu"]
 	tools = ["cargo",
 		"clippy",
 		"rustfmt",
