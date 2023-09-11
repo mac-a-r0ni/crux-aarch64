@@ -97,15 +97,13 @@ f:c9374aad38d5046950bb1fc70f695918:pkgutils/.md5sum
 f:8471c5d991e9f2ddfaf09e9a3917b81f:kbd/Pkgfile
 f:cb16f26de91da8792221c4bb295a5329:kbd/.footprint
 f:41782cddf6f9dbdbdc2688e94a617bf0:kbd/.md5sum
-f:b7830bb90e376c90a43c2c190a0a5ffa:llvm/cmake-16.0.6.src.tar.xz
-f:7d986cda69719a35bd5ecb266fcf1f65:llvm/llvm-16.0.6.src.tar.xz
 f:7cd92bbad4c8b4723749955f0619c66d:llvm/llvm-config.h
 f:2c6bf25a88ae1b977652ecca17c46bea:llvm/README
-f:6d6726e294af98843bc02df578f88bd6:llvm/llvm#16.0.6-1.pkg.tar.xz
 f:b8fc47340d80d62820fd58fe61ea45ab:llvm/Pkgfile
+f:f15efd5923e9f4ee4c996408ffd8bf21:llvm/.footprint
+f:a61e736725537bdd4a19709a614f7abe:llvm/.md5sum
 f:7fc6870fe0887ee43a2f0b720e4cdd4f:llvm/install-prefix.patch
 f:b7a931c1bdd849882d3b1da696e2d14a:llvm/rust-feature-tables.patch
-f:93f5eae2f0012c7b5abdddda216d6ac0:llvm/third-party-16.0.6.src.tar.xz
 f:7c9128522053af79791bcfdd55834c2a:gcc/gcc-nocheck-fixincludes.patch
 f:c80dbd9089b1382398acdae99f45672c:gcc/Pkgfile
 f:66d6f11535cc0154751f7c567947c82e:gcc/.footprint
