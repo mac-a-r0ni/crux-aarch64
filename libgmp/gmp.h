@@ -3,7 +3,7 @@
 #ifndef __STUB__GMP_H__
 #define __STUB__GMP_H__
 
-#if defined(__x86_64__) || \
+#if defined(__aarch64__) || \
     defined(__sparc64__) || \
     defined(__arch64__) || \
     defined(__powerpc64__) || \
