@@ -6,7 +6,6 @@ d:libnl
 d:cmake
 d:python3
 d:rust
-d:libarchive
 d:lm_sensors
 d:libgmp
 d:libvpx
@@ -47,13 +46,10 @@ f:577f48f530ea0285daf76e83699d3d65:python3/.footprint
 f:9c95c299485e8b29f4a4d2b078e70282:python3/.md5sum
 f:a68528b0fd1e5420b6f851ae579e97a4:rust/.nostrip
 f:2db8ab41638d26e25aace865f85df6a6:rust/0001-cargo-Change-libexec-dir.patch
-f:2f02e21b3fa6258d1436f0f2015cf442:rust/Pkgfile
+f:a2c75a6ff45f4fcff1831c4256dd0de7:rust/Pkgfile
 f:ad1168d9521377285b8cfd72926d98a9:rust/.footprint
 f:46d8191bb80eb9f7b45b85bafd69ba6c:rust/.md5sum
 f:6be69fea68273aad5da7f5e9138a8933:rust/0001-bootstrap-Change-libexec-dir.patch
-f:5db0726fe5ea0750b7efd8e6d85579a2:libarchive/Pkgfile
-f:9a46d04f679847607dacf76564add6e8:libarchive/.footprint
-f:61718cfd526bb5b0cb9516ba664d5829:libarchive/.md5sum
 f:c78da831c375e0c2d8d187dc4fabd272:lm_sensors/README
 f:34a8bf1f1f3efc69074fcb00b0fc230e:lm_sensors/Pkgfile
 f:51f08df0cbf3a8d5f4f65b6316aa2fbb:lm_sensors/.footprint
