@@ -132,8 +132,6 @@ f:507c1780a370500cdb233be39cc2c772:gcc/fix-nested-generic-lambda.patch
 f:81e1c151def8887a592d2cae9e41efa4:ldb/Pkgfile
 f:f77f81380bd062a963824b9e4f11802b:ldb/.footprint
 f:350c4f1f685d9e0fdb61afb9640294fb:ldb/.md5sum
-f:20273b2e220d0c1cac6b8830bdfcca90:libdrm/libdrm#2.4.116-1.pkg.tar.xz
 f:da32a618ba02937fb5ed94a4b1a670ca:libdrm/.signature
-f:1e4e75070b8c5cb1e828cef1d704f734:libdrm/libdrm-2.4.116.tar.xz
 f:9b43717d93a98a2a5772a2bd70e202e2:libdrm/Pkgfile
 f:32fc5d41146b0b30fe35c01b88623d0b:libdrm/.footprint
