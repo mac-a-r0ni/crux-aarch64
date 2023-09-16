@@ -1,13 +1,14 @@
 # Description: The Rust language with Cargo included.
 # URL: https://www.rust-lang.org/
-# Maintainer: CRUX System Team, core-ports at crux dot nu
+# Maintainer: Danny Rawlins, crux at romster dot me
+# Arch Maintainer: CRUX-ARM System Team, devel at crux-arm dot nu
 # Depends on: compiler-rt
 # Optional: ccache libgit2 lld polly sccache
 
 name=rust
-version=1.72.0
-_date=2023-07-13
-_rustc=1.71.0
+version=1.70.0
+_date=2023-04-20
+_rustc=1.69.0
 _cargo=$_rustc
 release=1
 
@@ -16,7 +17,8 @@ source=(https://static.rust-lang.org/dist/${name}c-$version-src.tar.xz
 	https://static.rust-lang.org/dist/$_date/rustc-$_rustc-aarch64-unknown-linux-gnu.tar.xz
 	https://static.rust-lang.org/dist/$_date/cargo-$_cargo-aarch64-unknown-linux-gnu.tar.xz
 	0001-bootstrap-Change-libexec-dir.patch
-	0001-cargo-Change-libexec-dir.patch)
+	0001-cargo-Change-libexec-dir.patch
+	0002-compiler-Change-LLVM-targets.patch)
 
 unpack_source() {
 	for file in ${source[@]}; do
@@ -66,6 +68,7 @@ build() {
 	patch -d src/tools/cargo -Np1 -i $SRC/0001-cargo-Change-libexec-dir.patch
 
 	# Use our *-pc-linux-gnu targets, making LTO with clang simpler
+	patch -p1 -i $SRC/0002-compiler-Change-LLVM-targets.patch
 
 cat <<- EOF > $SRC/config.toml
 	changelog-seen = 2
@@ -87,9 +90,6 @@ cat <<- EOF > $SRC/config.toml
 	codegen-units-std = 1
 	debuginfo-level-std = 2
 	codegen-tests = false
-	backtrace-on-ice = true
-	remap-debuginfo = true
-	jemalloc = true
 
 	description = "CRUX"
 	channel = "stable"
@@ -100,15 +100,7 @@ cat <<- EOF > $SRC/config.toml
 
 	[build]
 	target = ["aarch64-unknown-linux-gnu"]
-	tools = ["cargo",
-		"clippy",
-		"rustfmt",
-		"analysis",
-		"src",
-		"rust-demangler",
-		"rust-analyzer",
-		"rust-analyzer-proc-macro-srv",
-		"rustdoc"]
+	tools = ["cargo", "clippy", "rustfmt", "analysis", "src", "rust-demangler", "rust-analyzer", "rustdoc"]
 	docs = false
 	extended = true
 	sanitizers = true
@@ -121,12 +113,12 @@ cat <<- EOF > $SRC/config.toml
 	@RUSTFMT@
 
 	[target.aarch64-unknown-linux-gnu]
-	llvm-config = "/usr/bin/llvm-config"
-	llvm-filecheck = "/usr/bin/FileCheck"
 	cc = "/usr/bin/gcc"
 	cxx = "/usr/bin/g++"
 	ar = "/usr/bin/gcc-ar"
 	ranlib = "/usr/bin/gcc-ranlib"
+	llvm-config = "/usr/bin/llvm-config"
+	llvm-filecheck = "/usr/bin/FileCheck"
 EOF
 
 	if [ -e '/usr/bin/rustc' ]; then
@@ -175,14 +167,11 @@ EOF
 	/usr/bin/python3 ./x.py build --config="${SRC}"/config.toml -j ${JOBS-1}
 	DESTDIR=$PKG /usr/bin/python3 ./x.py --config="${SRC}"/config.toml install
 
-	prt-get isinst bash-completion || rm -r $PKG/etc/bash_completion.d/
-	prt-get isinst zsh || rm -r $PKG/usr/share/zsh
-
-	install -d $PKG/etc/revdep.d
-	echo "/usr/lib/rustlib/aarch64-unknown-linux-gnu/lib" > $PKG/etc/revdep.d/$name
+	[ -e '/usr/bin/zsh' ] || rm -r $PKG/usr/share/zsh
 
 	# cleanup
 	rm -r $PKG/usr/share/doc
+	rm -r $PKG/etc
 	rm $PKG/usr/lib/rustlib/{components,manifest-rustc,rust-installer-version,uninstall.sh}
 
 	# Remove analysis data for libs that weren't installed
@@ -195,7 +184,4 @@ EOF
 			rm -v "$file"
 		fi
 	done < <(find "$PKG/usr/lib/rustlib"  -path '*/analysis/*.json' -print0)
-
-	rm $PKG/usr/bin/*.old
-	rm $PKG/usr/lib/rustlib/{install.log,manifest-*}
 }
