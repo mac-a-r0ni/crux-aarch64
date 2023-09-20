@@ -20,6 +20,7 @@ d:util-linux
 d:pkgutils
 d:kbd
 d:llvm
+d:cbindgen
 d:gcc
 d:ldb
 d:libdrm
@@ -118,6 +119,9 @@ f:f15efd5923e9f4ee4c996408ffd8bf21:llvm/.footprint
 f:a61e736725537bdd4a19709a614f7abe:llvm/.md5sum
 f:7fc6870fe0887ee43a2f0b720e4cdd4f:llvm/install-prefix.patch
 f:b7a931c1bdd849882d3b1da696e2d14a:llvm/rust-feature-tables.patch
+f:8306d7950687a809fb0298e78f7737d4:cbindgen/Pkgfile
+f:0038a6c01b767a02e176a3cf00fbd244:cbindgen/.footprint
+f:8b08f6340a930fb9ae8e6755e168cfcd:cbindgen/.md5sum
 f:7c9128522053af79791bcfdd55834c2a:gcc/gcc-nocheck-fixincludes.patch
 f:c80dbd9089b1382398acdae99f45672c:gcc/Pkgfile
 f:66d6f11535cc0154751f7c567947c82e:gcc/.footprint
